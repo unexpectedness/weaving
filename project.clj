@@ -5,8 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure        "1.10.0"   :scope "provided"]
                  [org.clojure/clojurescript  "1.10.520" :scope "provided"]]
-  :plugins [[lein-codox     "0.10.3"]
-            [lein-cljsbuild "1.1.7"]
+  :plugins [[lein-codox     "0.10.8"]
+            [lein-cljsbuild "1.1.8"]
             [lein-doo       "0.1.11"]]
   :prep-tasks ["compile" ["cljsbuild" "once"]]
   :cljsbuild {:builds {}}
@@ -20,7 +20,7 @@
                                     :optimizations :none}}}}}
    :dev [:common
          {:dependencies
-          [[org.clojars.unexpectedness/shuriken "0.14.40" :exclusions [weaving]]
+          [[org.clojars.unexpectedness/shuriken "0.14.51" :exclusions [weaving]]
            [doo "0.1.11"]
            [codox-theme-rdash "0.1.2"]]}]
    :test [:dev
