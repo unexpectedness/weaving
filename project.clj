@@ -1,4 +1,4 @@
-(defproject weaving "0.2.4"
+(defproject net.clojars.unexpectedness/weaving "0.2.4"
   :description "Combinators to weave Clojure[Script] functions together"
   :url "https://github.com/unexpectedness/weaving"
   :license {:name "Eclipse Public License"
@@ -20,7 +20,7 @@
                                     :optimizations :none}}}}}
    :dev [:common
          {:dependencies
-          [[org.clojars.unexpectedness/shuriken "0.14.51" :exclusions [weaving]]
+          [[net.clojars.unexpectedness/shuriken "0.14.52" :exclusions [weaving]]
            [doo "0.1.11"]
            [codox-theme-rdash "0.1.2"]]}]
    :test [:dev
