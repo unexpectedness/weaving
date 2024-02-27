@@ -1,4 +1,4 @@
-(defproject net.clojars.unexpectedness/weaving "0.2.4"
+(defproject net.clojars.unexpectedness/weaving "0.2.5"
   :description "Combinators to weave Clojure[Script] functions together"
   :url "https://github.com/unexpectedness/weaving"
   :license {:name "Eclipse Public License"

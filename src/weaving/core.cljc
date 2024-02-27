@@ -1,7 +1,8 @@
 (ns weaving.core
   (:require [clojure.set :as set]
             [clojure.walk :refer [postwalk]]
-            [clojure.spec.alpha :as s]))
+            [clojure.spec.alpha :as s])
+  #?(:cljs (:require-macros weaving.core)))
 
 (defn =|
   "Returns a function `(g x)` that returns `(= x v)`."
@@ -115,7 +116,7 @@
   [f]
   #(f %&))
 
-(defn tap|
+(defn doto|
   "Returns a function that calls `fns` in order, passing to each one
   its argument before returning it."
   ([] identity)
@@ -124,6 +125,9 @@
         (if (> (count %&) 1)
           %&
           (first %&)))))
+
+;; Deprecated
+(def ^:no-doc tap| doto|)
 
 (defn and|
   "Returns a function `f` that runs `fns` in order on the arguments of

@@ -2,7 +2,7 @@
   (:require #?(:clj  [clojure.test :refer :all]
                :cljs [cljs.test    :refer-macros [deftest is are testing]])
             [weaving.core :refer [*| juxtm| <-| =| not| | || ø| ø|| ->|
-                                  apply| unapply| when| if| tap| and|
+                                  apply| unapply| when| if| doto| and|
                                   or| call in| %| args| each-arg|]])
   #?(:cljs
       (:require-macros
@@ -146,12 +146,12 @@
   (is (= ":a" ((if| number? inc str) :a)))
   (is (= :a   ((if| number? inc) :a))))
 
-(deftest test-tap|
+(deftest test-doto|
   (with-fresh-calls
-    (is (= 1 ((tap| inc do-nothing do-nothing) 1)))
+    (is (= 1 ((doto| inc do-nothing do-nothing) 1)))
     (assert-calls [:do-nothing :do-nothing]))
   (testing "edge cases"
-    (is (= identity (tap|)))))
+    (is (= identity (doto|)))))
 
 (deftest test-and|
   (testing "when each predicate is true"
